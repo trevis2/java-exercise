@@ -43,7 +43,6 @@ public class MyComplexSimone {
     // Moltiplica questo numero complesso per il numero complesso z
     // prodotto di due complessi: z = z1*z2 = (x1*x2 -y1*y2) + i*(x1*y2 + x2*y1)
     public MyComplexSimone mult(MyComplexSimone z2) {
-
         return eseguiOerazione("mult", z2);
     }
 
@@ -69,7 +68,7 @@ public class MyComplexSimone {
                 z3.setRE((getRe() * z2.getRe()) - (getIm() * z2.getIm()));
                 z3.setIM((getRe() * z2.getIm()) + (getIm() * z2.getRe()));
                 break;
-            case "div": // da correggere non è così la div
+            case "div": // da correggere non è così la divisione
                 z3.setRE((getRe() / z2.getRe()));
                 z3.setIM((getRe() / z2.getRe()));
                 break;
