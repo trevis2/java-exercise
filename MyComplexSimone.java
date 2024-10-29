@@ -30,39 +30,54 @@ public class MyComplexSimone {
 
     // Somma a questo numero complesso il numero complesso z
     // somma di due complessi: z = z1+z2 = (x1+x2) + i(y1+y2)
-    public MyComplexSimone add(MyComplexSimone z) {
-        MyComplexSimone c = new MyComplexSimone();
-        c.setRE(a.getRE + b.getRE);
-        c.setIM(a.getIM + b.getIM);
-        return c;
+    public MyComplexSimone add(MyComplexSimone z2) {
+        return eseguiOerazione("add", z2);
     }
 
     // Sottrae a questo numero complesso il numero complesso z
     // sottrazione di due complessi: z = z1-z2 = (x1-x2) +i(y1-y2)
-    public MyComplexSimone sub(MyComplexSimone z) {
-        MyComplexSimone c = new MyComplexSimone();
-        c.setRE(a.getRE - b.getRE);
-        c.setIM(a.getIM - b.getIM);
-        return c;
+    public MyComplexSimone sub(MyComplexSimone z2) {
+        return eseguiOerazione("sub", z2);
     }
 
     // Moltiplica questo numero complesso per il numero complesso z
     // prodotto di due complessi: z = z1*z2 = (x1*x2 -y1*y2) + i*(x1*y2 + x2*y1)
-    public MyComplexSimone mult(MyComplexSimone z) {
-        MyComplexSimone c = new MyComplexSimone();
-        c.setRE((a.getRE * b.getRE) - (a.getIM * b.getIM));
-        c.setIM((a.getRE * b.getRE) + (a.getIM * b.getIM));
-        return c;
+    public MyComplexSimone mult(MyComplexSimone z2) {
+
+        return eseguiOerazione("mult", z2);
     }
 
     // Divide questo numero complesso per il numero complesso z
     // divisione fra due complessi: z1/z2 = z1 *1/z2, per z2 != 0
-    public MyComplexSimone div(MyComplexSimone z) {
-        MyComplexSimone c = new MyComplexSimone();
-        c.setRE(a.getRE / b.getRE);
-        c.setIM(a.getIM / b.getIM);
-        // if b != 0 then System.out.println("non si puo dividere per z2=0")
-        return c;
+    //
+    public MyComplexSimone div(MyComplexSimone z2) {
+        return eseguiOerazione("div", z2);
+    }
+
+    private MyComplexSimone eseguiOerazione(String operazione, MyComplexSimone z2) {
+        MyComplexSimone z3 = new MyComplexSimone();
+        switch (operazione) {
+            case "add":
+                z3.setRE(getRe() + z2.getRe());
+                z3.setIM(getIm() + z2.getIm());
+                break;
+            case "sub":
+                z3.setRE(getRe() - z2.getRe());
+                z3.setIM(getIm() - z2.getIm());
+                break;
+            case "mult":
+                z3.setRE((getRe() * z2.getRe()) - (getIm() * z2.getIm()));
+                z3.setIM((getRe() * z2.getIm()) + (getIm() * z2.getRe()));
+                break;
+            case "div": // da correggere non è così la div
+                z3.setRE((getRe() / z2.getRe()));
+                z3.setIM((getRe() / z2.getRe()));
+                break;
+            default:
+                System.err.println("operazione non consentita");
+                break;
+        }
+        return z3;
     }
 
     // Calcola il coniugato di questo numero complesso
