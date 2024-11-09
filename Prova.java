@@ -22,14 +22,24 @@ public class Prova {
 		// System.out.println((long)AMOUNT + " - " + DISCOUNT + " = " + longResult);
 		// System.out.println("........... questa volta e` giusto .........");
 
-		System.out.println(convertiIntInBinario(DISCOUNT));
+		System.out.println("");
+		System.out.println("DISCOUNT in decimale: " + DISCOUNT);
+		System.out.println("AMOUNT in decimale ma scritto come double: " + AMOUNT);
+		System.out.println("AMOUNT in decimale ma scritto come long: " + (long) AMOUNT);
+
+		System.out.println("");
+		System.out.println("");
+		System.out.println("DISCOUNT in binario: " + convertiIntInBinario(DISCOUNT));
 		// 110010 è la conversione in binario si 50
 
-		System.out.println(convertiLongInBinario((long) AMOUNT));
+		System.out.println("AMOUNT (castato a long) in binario: " + convertiLongInBinario((long) AMOUNT));
 		// 101100011010001010111100001011101100010100000000000000000 è la conversione in
 		// binario si 100000000000000000 (che sarebbe 1.0e+17 scritto in long e non in
 		// double)
-
+		System.out.println("");
+		System.out.println("");
+		System.out.println(
+				"non c'è un metodo dentro Double che ti converte direttamente in binario.\nDobbiamo gestire manualmente la separazione dei bit per segno, esponente e mantissa");
 	}
 
 	private static String convertiIntInBinario(int value) {
