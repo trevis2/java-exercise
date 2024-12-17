@@ -2,6 +2,8 @@
      la classe Massimo contiene il metodo ricorsivo massRic.
 	Costruire una classe di prova */
 
+	//programma PROF
+
 	public class Massimo {
 
 		public static int massRic (int a[],int dim)
