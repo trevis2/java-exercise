@@ -35,4 +35,12 @@
 			
 			
 		}
+
+
+/*Scrivere nella classe Massimo (contenitore di metodi statici)  un algoritmo ricorsivo per calcolare il massimo di n numeri interi.
+
+Suggerimento. Analogamente a quanto fatto per la realizzazione dell'algoritmo ricorsivo per il calcolo del fattoriale, si pensi di conoscere il massimo di n-1 elementi e di eseguire successivamente l'operazione di massimo tra due numeri, cioè il massimo degli n-1 elementi  e  an:
+massimo(a1,a2,..,an) = max(massimo(a1,a2,..a(n-1)), an) dove max(x,y) e' un metodo che restituisce il massimo tra due elementi.
+
+Inserire poi nella classe Massimo un metodo main per verificare il funzionamento del metodo realizzato.*/
 		
